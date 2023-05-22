@@ -1,0 +1,35 @@
+"
+</html>{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles %}
+  {{super()}}
+  <link rel="stylesheet" href="{{url_for('static', filename="meu.css")}}"></link>
+{% endblock %}
+
+
+{% block content %}
+  <div class="main-login">
+    <div class="main-login">
+      <div class="card-login">
+        <h1>Crie uma chamada</h1>
+        <form action="" method="post" >
+            <div class="textfield">
+              {{form.hidden_tag()}} 
+              {{form.name(class="textfield")}}
+              {{form.password(class="textfield")}}
+            </div>
+            <div>
+              {{form.submit(class="btn-login")}}
+            </div>
+        </form>
+        <div>
+          <br>
+        <a href="{{ url_for('dashboard')}}">Voltar para home</a>
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
